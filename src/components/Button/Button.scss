@@ -1,52 +1,31 @@
-@use '../../assets/styles/abstract' as a;
-
 .button {
   display: block;
-  width: max-content;
-  padding: 0.9rem 1.5rem;
+  padding: 1rem 2.5rem;
   font-weight: 700;
   border: none;
   border-radius: 1.75rem;
   cursor: pointer;
   transition: 0.15s;
-
-  &--wide {
-    padding: 0.9rem 2rem;
-  }
-
-  &--white {
-    color: a.$clr-primary-color-light-red;
-    background-color: a.$clr-neutral-white;
-    border: 1px solid a.$clr-neutral-white;
-
-    &:hover {
-      color: a.$clr-neutral-white;
-      background-color: a.$clr-primary-color-very-light-red;
-      border: 1px solid transparent;
+  
+  &--full-width {
+    width: 100%;
+    
+    @include breakpoint(medium) {
+      width: unset;
     }
   }
-
-  &--transparent {
-    color: a.$clr-neutral-white;
-    background-color: transparent;
-    border: 1px solid a.$clr-neutral-white;
-
+  
+  &--cyan {
+    color: $clr-white;
+    background-color: $clr-primary-color-moderate-cyan;
+    
     &:hover {
-      color: a.$clr-primary-color-very-light-red;
-      background-color: a.$clr-neutral-white;
-      border: 1px solid a.$clr-neutral-white;
+      background-color: $clr-primary-color-dark-cyan;
     }
-  }
-
-  &--gradient-red {
-    color: a.$clr-neutral-white;
-    background: a.$clr-gradient-red;
-    border: 1px solid a.$clr-neutral-white;
-
-    &:hover {
-      color: a.$clr-primary-color-very-light-red;
-      background-color: a.$clr-neutral-white;
-      border: 1px solid a.$clr-neutral-white;
+    
+    &:disabled {
+      background-color: #2F2F2F; // TODO: Set the color in scss
+      cursor: unset;
     }
   }
 }

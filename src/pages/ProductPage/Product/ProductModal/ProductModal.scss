@@ -1,0 +1,129 @@
+.product-modal {
+  position: absolute;
+  background-color: $clr-darken;
+  justify-items: center;
+  align-content: flex-start;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+
+  &__container {
+    grid-area: 1/2;
+    display: grid;
+    gap: 2rem;
+    padding: 3rem;
+    background-color: $clr-white;
+    border-radius: 0.5rem;
+    margin: 8rem 0;
+    max-width: 55rem;
+  }
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  &__text {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+  
+  &__close-icon {
+    cursor: pointer;
+  }
+
+  &__rewards {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__reward {
+    display: grid;
+    justify-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    @include breakpoint(medium) {
+      grid-template: repeat(2, max-content) / 1fr max-content;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    &--disabled {
+      opacity: 0.5;
+      cursor: unset;
+    }
+  }
+  
+  &__reward-title {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1rem;
+    
+    @include breakpoint(medium) {
+      grid-area: 1/1;
+    }
+  }
+
+  &__reward-title-text {
+    display: grid;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    
+    @include breakpoint(medium) {
+      grid-auto-flow: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  
+  &__pledge {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $clr-primary-color-moderate-cyan;
+    
+    @include breakpoint(medium) {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+  
+  &__reward-details {
+    @include breakpoint(medium) {
+      grid-area: 2/1 / 2/3;
+    }
+  }
+
+  &__reward-select {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include breakpoint(medium) {
+      grid-area: 1/2;
+      justify-self: flex-end;
+    }
+  }
+
+  &__reward-stock {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+  }
+
+  &__reward-quantity {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $clr-black;
+  }
+}

@@ -1,0 +1,20 @@
+.full-width-header {
+  z-index: 2;
+
+  &__logo {
+    z-index: 2;
+  }
+
+  &__links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__link {
+    color: white;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

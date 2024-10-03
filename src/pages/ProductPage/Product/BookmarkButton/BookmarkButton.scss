@@ -1,0 +1,30 @@
+.bookmark-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 1.75rem;
+  color: #7A7A7A;
+  background-color: #F4F4F4;
+  cursor: pointer;
+  transition: 0.15s;
+
+  @include breakpoint(medium) {
+    padding-right: 1.5rem;
+  }
+  
+  span {
+    display: none;
+    @include breakpoint(medium) {
+      display: unset;
+    }
+  }
+
+  &:hover {
+    span,
+    img {
+      opacity: 0.5;
+    }
+  }
+}
